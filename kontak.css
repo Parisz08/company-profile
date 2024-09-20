@@ -1,0 +1,368 @@
+:root {
+    --burger-width: 36px;
+}
+
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4 {
+    color: #2e7d32;
+}
+
+a {
+    text-decoration: none;
+    color: #388e3c;
+}
+
+a:hover {
+    color: #2e7d32;
+}
+
+/* Header */
+/* Header Styling */
+header {
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Atur ukuran logo sesuai kebutuhan */
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #cddc39;
+}
+
+.menu {
+    background-color: transparent;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.menu .burgers {
+    display: flex;
+    flex-direction: column;
+    width: var(--burger-width);
+    height: calc(var(--burger-width));
+    justify-content: space-between;
+    display: none;
+}
+
+.burger {
+    width: var(--burger-width);
+    height: 2.5px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+.rotate-1 {
+    width: calc(var(--burger-width) *sqrt(2));
+    transform: rotate(45deg);
+    transform-origin: 0%;
+}
+
+.rotate-2 {
+    width: calc(var(--burger-width) *sqrt(2));
+    transform: rotate(-45deg);
+    transform-origin: 0%;
+}
+
+.hide {
+    scale: 0;
+}
+
+.menu-content {
+    background-color: var(--primary-white);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-content a {
+    color: var(--primary-black);
+}
+
+.menu-content a:last-child {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Kontak Section */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f1f8e9; /* Warna hijau muda */
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: #2e7d32; /* Hijau tua */
+    margin-bottom: 30px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #388e3c;
+}
+
+/* Styling untuk Ikon Sosial Media */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+}
+
+.social-media svg {
+    fill: black; /* Warna hijau untuk ikon sosial media */
+    width: 40px;
+    height: 40px;
+}
+
+.social-media a:hover svg {
+    fill: black; /* Warna hijau yang lebih terang saat hover */
+}
+
+/* Footer */
+footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .logo-container h1{
+        position: relative;
+        right: 50px;
+        font-size: x-large;
+    }
+    .logo-container img{
+        position: relative;
+        right: 50px;
+    }
+    nav ul {
+        display: none;
+    }
+    .burgers{
+        position: relative;
+        right:20px ;
+        /* margin-bottom: 10px; */
+    }
+    .menu {
+        background-color: transparent;
+        margin: 0;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+    }
+    
+    .menu .burgers {
+        display: flex;
+        flex-direction: column;
+        width: var(--burger-width);
+        height: calc(var(--burger-width));
+        justify-content: space-between;
+        position: relative;
+        right: 20px;
+        /* position: relative; */
+    }
+    .container-menu{
+        position: absolute;
+        right:20px;
+    }
+    
+    
+    .burger {
+        width: var(--burger-width);
+        height: 2.5px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    .rotate-1 {
+        width: calc(var(--burger-width) * sqrt(2));
+        transform: rotate(45deg);
+        transform-origin: 0%;
+    }
+    
+    .rotate-2 {
+        width: calc(var(--burger-width) * sqrt(2));
+        transform: rotate(-45deg);
+        transform-origin: 0%;
+    }
+    
+    .hide {
+        scale: 0;
+    }
+    
+    .menu-content {
+        background-color:#000000c4;
+        backdrop-filter: 15px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .menu-content a {
+        color: var(--primary-black);
+    }
+    
+    .menu-content a:last-child {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 8px;
+        width: 100%;
+    }
+}
